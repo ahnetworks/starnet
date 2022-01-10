@@ -1,8 +1,138 @@
-body {
-    background-color: #3686BB;
+*{
+    transition:all 0.3s ease;
 }
-.login{font-family:arial;padding:90px 0 0 0}.login .logo{display:block;border-radius: 75px;margin:0 auto 30px}.login a,.login a:visited{text-decoration:underline;color:inherit}ul.notice{margin:30px auto;width:300px;text-align:center;list-style-position:inside;font-size:15px;padding:20px 30px;border-radius:3px}ul.notice.errors{background-color:#fff4f4;border:1px solid #f50909;color:#f50909}ul.notice.success{background-color:#d7eacd;border:1px solid #6fae4f;color:#6fae4f}ul.notice li{padding:5px 0}.vertical-form{margin:0 auto}.vertical-form legend{width:100%;font-size:24px;font-weight:500;text-align:center;margin:0 0 30px 0}.vertical-form input[type='text'],.vertical-form input[type='password'],.vertical-form input[type='number']{border:1px #c1c1c1 solid;color:#c1c1c1;height:50px;font-size:18px}.vertical-form input[type='text'],.vertical-form input[type='password'],.vertical-form input[type='submit'],.vertical-form input[type='number']{display:block;margin:0 auto 18px auto;width:280px;text-align:center;border-radius:30px;color:#2d2d2d;outline:none;font-family:inherit}.vertical-form input[type='submit']{-webkit-appearance:none;color:#fff;background:#3686bb; background-image:url(vpn_lock.png);
-	background-repeat: no-repeat; background-position:center;background-size:40px;border:none;height:57px;width:284px;font-size:15px;font-weight:400;outline:0;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer}.vertical-form input:hover[type='submit']{background-color:#2b6a93;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease}
-.vertical-form input:active[type='submit']{background-image:url(vpn_key.png);
-	background-repeat: no-repeat; background-position:center;background-size:40px;}
-.vertical-form .footer{text-align:center}.vertical-form .footer p:first-child{color:#222}.vertical-form .footer a:first-child{border-bottom:solid 1px #ccc;text-decoration:none}.vertical-form .footer p:nth-child(2) a{border-bottom:solid 1px #000} @media (max-width:768px){.login{padding:10px 0 0 0}}
+body {
+padding:0;margin:0 auto;
+    background:#1b1b1b;
+    background-size: cover;
+    height: 1000px;
+    position:relative;
+    top: -35px;
+    overflow-y: hidden;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#head{
+    display: block;
+    background: rgba(0,0,0,0.2);
+;
+    width: 100%;
+    height: 230px;
+    position:relative;
+    top:-37px;
+    z-index: 1;
+    display:none;
+}
+#logo{
+position: relative;
+    top:0px;
+}
+
+legend{
+    position:relative;
+    top:17px;
+    color:#fff;
+    font-size: 32px;
+    font-family:sans-serif;
+    
+}
+#box{
+    position:relative;
+    top:75px;
+	width:300px;
+	max-width:650px;
+	height:300px;	
+	background-color:rgba(255,255,255,1);
+	border-radius:0px;
+	padding:0 0 0 0;
+	margin:0px auto;
+    z-index: 2;
+    box-shadow: 0 1px 0.5px #f1f1f1;
+
+
+}
+#topbox
+{
+    background: #141414;
+    width: 100%;
+    height: 70px;
+    
+    
+}
+
+#img{
+	width: 200px;
+	height: 200px;
+	margin-top: -89px;
+	margin-right: -74px;
+}
+
+/**------------USER------------**/
+#user{
+border:0px #ccc solid;
+    border-bottom:1px #ccc solid; color:#222222;background:rgba(255,255,255,0.1);opacity: 1;
+height:40px;font-size:16px;
+display:block;width:230px;
+text-align:center;border-radius:0px;
+font-family:inherit;outline: none;
+    transition:all 0.3s ease;
+margin-top: 10px;
+}
+#user:focus{
+     border-bottom:1px #f1f1f1 solid;   
+}
+/**--------------------PASSWORD----------**/
+#pass{
+    border:0px #ccc solid;
+    border-bottom:1px #ccc solid;
+    color:#222222;background:rgba(255,255,255,0.1);opacity: 1;height:40px;font-size:16px;
+display:block;margin:5px;width:230px;text-align:center;border-radius:0px;font-family:inherit;outline: none;
+    transition:all 0.3s ease;
+}
+#pass:focus{
+     border-bottom:1px #f1f1f1 solid;   
+}
+/*---------------Boton---------*/
+#boton{
+	-webkit-appearance:none;color:#fff;
+	background:#1b1b1b; background-image:url(ic_arrow_forward_white_24dp_1x.png);
+	background-repeat: no-repeat; background-position:center; opacity: 1;
+    border:none;border-radius:21px;height:42px;width:234px;font-size:16px;font-weight:400;outline:0;text-transform:uppercase;
+    letter-spacing:1.5px;cursor:pointer;
+    margin-top: 10px;
+    }
+#boton:hover{
+	background-color:#64b5f6;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease
+	}
+    .vertical-form .footer{
+        position: relative;
+        top:80px;
+        text-align:center;
+        z-index: 3;
+color:#ccc;}
+.vertical-form .footer a{text-decoration:none;color:#f44336;}
+    @media (min-width:620px){
+        #box{
+            width: 600px;
+        }
+        #topbox{
+            height: 300px;
+            width:300px;
+            position: absolute;
+        }
+		#img{
+			height: 290px;
+			width: 290px;
+			margin-top: -100px;
+			margin-left: -100px;
+			position: absolute;
+		}
+        #user,#pass,#boton,#error{
+            position: relative;
+            left:152px;
+            top:55px;
+        }
+        legend{
+            position: relative;
+            top:85px;
+        }
+       }

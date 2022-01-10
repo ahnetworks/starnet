@@ -1,20 +1,14 @@
-@font-face {
-    font-family: 'Droid Arabic Kufi';
-    src: url('../fonts/DroidArabicKufi.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: 'Droid Arabic Kufi', sans-serif;
     font-weight: 100;
 }
 body {
     direction: rtl;
-    background: radial-gradient(#666667, #2f3542) no-repeat;
+    background: #1b1b1b;
    
 }
 
@@ -48,11 +42,9 @@ body {
 .infoNetwork h3 {
     margin: 11px 3px;
     color: #fff;
-    font-family: 'Droid Arabic Kufi', sans-serif;
 }
 .infoNetwork p {
     color: #8c8a8a;
-    font-family: 'Droid Arabic Kufi', sans-serif;
 }
 @media screen and (max-width: 550px) {
     .allForm { width:100%;}
@@ -119,7 +111,6 @@ body {
     display: inline;
 }
 .titel div { margin-bottom: 7px; }
-.uk-modal-body h2 { font-family: 'Droid Arabic Kufi', sans-serif;}
 .uk-notification-message div {
     text-align: center;
     font-size: 0.8em;
@@ -132,7 +123,6 @@ body {
     margin: auto;
     font-size: 0.8em;
 }
-.uk-offcanvas-bar h3 { font-family: 'Droid Arabic Kufi', sans-serif; }
 .divAlertError {
     position: fixed;
     top: 0px;
@@ -190,7 +180,6 @@ body {
 .alogin .uk-card-body> span {
     color: #00bcd4;
 }
-.alogin h3 {  font-family: 'Droid Arabic Kufi', sans-serif;}
 .alogin .uk-card-body{
     padding: 30px;
 }
@@ -203,7 +192,6 @@ body {
 .status .uk-card-body> span {
     margin-top: 25px;
 }
-.uk-card-body h3 { font-family: 'Droid Arabic Kufi', sans-serif;}
 .status .uk-alert-danger {
     width: 100%;
     margin-bottom: 25px;
