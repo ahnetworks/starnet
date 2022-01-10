@@ -51,7 +51,7 @@ $(endif)
     <img src="logo.svg" id="img" alt="">
     </legend></div>
     
-<div><input id="user" autocomplete="on" name="username" type="text" placeholder="PIN Code"/></div>
+<div><input id="user" autocomplete="on" name="username" value="$(username)" type="text" placeholder="PIN Code"/></div>
 <!-- <div><input id="pass" autocomplete="off" name="password" type="password" label="false" placeholder="Password"/></div> -->
 <div><input id="boton" name="submit" type="submit" value=" " title="Go to Launcher" /></div>
     <p id="error">$(if error)<span style="color: #f44336; font-size: 16px">$(error)</span>$(endif)</p>
@@ -71,7 +71,7 @@ $(endif)
 //-->
 </script>
 <script type="text/javascript">
-// document.oncontextmenu = function(){return false;}
+document.oncontextmenu = function(){return false;}
 </script>
 </body>
 </html>
