@@ -20,7 +20,7 @@ $(if chap-id)
 		<input type="hidden" name="popup" value="true" />
 	</form>
 	
-	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript" src="assets/js/md5.js"></script>
 	<script type="text/javascript">
 	<!--
 	    function doLogin() {
@@ -49,7 +49,8 @@ $(endif)
     <div id="topbox">
     <legend>
     <img src="logo.svg" id="img" alt="">
-    </legend></div>
+    </legend>
+</div>
     
 <div><input id="user" autocomplete="on" name="username" value="$(username)" type="text" placeholder="PIN Code"/></div>
 <!-- <div><input id="pass" autocomplete="off" name="password" type="password" label="false" placeholder="Password"/></div> -->
@@ -66,12 +67,10 @@ $(endif)
 </form>
 
 <script type="text/javascript">
-<!--
   document.login.username.focus();
-//-->
 </script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 document.oncontextmenu = function(){return false;}
-</script>
+</script> -->
 </body>
 </html>
