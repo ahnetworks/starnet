@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>تسجيل الدخول</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> 
+    <link rel="stylesheet" href="assets/css/uikit.min.css" />
+    <link rel="stylesheet" href="assets/css/assets.css" />
+    <script type='text/javascript' language="JavaScript">
+
+        function rem(){
+        var uname = document.getElementById('uname').value;
+        var paswd = document.getElementById('paswd').value;
+        var rem   = document.getElementById('remember').checked;
+    
+        if(rem == true){
+        var date = new Date();
+        date.setTime(date.getTime()+(5*1000));
+        var expires = date.toGMTString();
+        date.setTime(date.getTime()+(259200*1000));
+        var expire  = date.toGMTString();
+        document.cookie = 'uname='+uname+';expires='+expire+'';
+        document.cookie = 'paswd='+paswd+';expires='+expire+'';
+        document.cookie = 'error=1;expires='+expires+'';
+        }
+        else{
+        return;
+        }
+        }
+    
+        function getCookie(){
+    
+        var date = new Date();
+        date.setTime(date.getTime()+(5*1000));
+        var expires = date.toGMTString();
+    
+        var SP = document.cookie.split(';');
+        for (i=0; i < SP.length; i++) {
+        name_value = SP[i];
+        str = name_value.substring(0,6);
+        if(str.indexOf("uname") !== -1){
+        uname = name_value.split('=');
+        uname = uname[1];
+        }
+        if(str.indexOf("paswd") !== -1){
+        paswd = name_value.split('=');
+        paswd = paswd[1];
+        }
+    
+        if(str.indexOf("error") !== -1){
+        return;
+        }
+    
+        }
+    
+        if(uname != ""){
+        document.cookie = 'error=1;expires='+expires+'';
+        window.location.href='login?username='+uname+'&password='+paswd+'';
+        }
+    
+        }
+    
+       getCookie();
+    
+    </script>
+</head>
+
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="./assets/js/md5.js"></script>
+	<script type="text/javascript">
+	//<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+<body style="min-height: 100vh;max-height: 100%;">
+
+<div class="infoNetwork">
+			<div class="logo-basheer">
+				<img id="logo" src="assets/img/logo.png">
+			</div>
+		
+			<!-- <h3 id="form_title_info">سات نت</h3> -->
+</div>
+
+<div class="uk-container uk-container-center">
+
+    <div class="conta_btn">
+        <!--<button class="uk-button uk-button-primary" type="button" uk-toggle="target: #offcanvas-flip"	>
+            <span class="uk-icon" uk-icon="icon: home"></span>
+        </button>-->
+        <button class="uk-button uk-button-danger" type="button" uk-toggle="target: #modal-location">
+            <span class="uk-icon" uk-icon="icon: location">مواقع البيع</span>
+        </button>
+        <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #modal-receiver">
+            <span class="uk-icon" uk-icon="icon: receiver">تواصل معنا</span>
+        </button>
+        <a  href="prices.html" class="uk-button uk-button-danger" type="button" >
+            <span >الأسعار $</span>
+        </a>
+    </div>
+   
+
+    <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <h3 id="form_title" > SATNET </h3>
+            <p id="info_network">.</p>
+        </div>
+    </div>
+
+    <div class="allForm" >
+        <div class="marque ">
+            <marquee direction="right">
+                البث التجريبي لشبكة سات نت علماً أن الشبكة تقوم بالعمل بـ 40% من قدرتها الحقيقة, ترقبوا إنطلاق الشبكة بسرعتها الحقيقة ومميزاتها - إدارة سات نت</marquee>
+        </div>
+
+        <form class="formlogin"
+        name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+
+            <legend id="form_title0" class="uk-legend uk-text-center uk-width-1-1" >تسجيل الدخول</legend>
+            
+            <div class="uk-margin">
+                <div class="uk-inline uk-width-1-1">
+                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: user"></span>
+                    <input id='uname' class="uk-input" onblur="this.value=removeSpaces(this.value);" placeholder="PIN Code"  name="username" type="text" required>
+                </div>
+            </div>
+
+            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                <label><input class="uk-checkbox" type="checkbox" id='remember' name='remember' value="ON" checked> حفظ بيانات الكرت</label>
+            </div>
+
+            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" onclick='return rem();' type="submit">تسجيل دخول</button>
+            $(if trial == 'yes')
+            $(endif)
+
+        </form>
+
+        <div class="copyright" style="margin-bottom: 15px;">
+            <span id="Address" style="color: #fb7103; font-weight: bold;">Developed by H & A</span>
+        </div>
+
+    </div>
+
+    <!-- <div class="infoNetwork" >
+        <div  class="logo-basheer" >
+            <img id="logo" src="assets/img/logo.png">
+        </div>
+
+        <h3 id="form_title_info" >سات نت</h3> -->
+        <!-- <p id="info_network2">سات نت</p> -->
+    <!-- </div> -->
+
+    <div id="modal-location" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body titel">
+            <h2 class="uk-modal-title"> مراكز توزيع الكروت  </h2>
+            <div>1 - <p id="titel0"> كشك كرنشي (رقم 26) - المنصة</p></div>
+			<div>2 - <p id="titel0"> سائق التوكتوك (بائع متجول) (737914881) - المنصة</p></div>
+			<div>3 - <p id="titel0"> كشك ليالي الشام (رقم 40) - المنصة</p></div>
+			<div>4 - <p id="titel0"> كشك بوب آيس (رقم 38) - المنصة</p></div>
+                     <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">إغلاق</button>
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-receiver" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">بيانات التواصل معنا</h2>
+            <div class="uk-alert-primary" uk-alert> 
+                <p> مدير الشبكة : <span id="Phone_Admin"> 772453819 </span></p>
+            </div>
+            <div class="uk-alert-primary" uk-alert>
+                <p>  قسم الصيانة : <span id="Phone_Repair"> 779031556 </span></p>                
+			</div>
+			<div class="uk-alert-primary" uk-alert>
+				<p> التواصل الإجتماعي: <a class="uk-icon" uk-icon="icon: twitter" href="https://twitter.com" ></a> <a class="uk-icon" uk-icon="icon: facebook" href="https://facebook.com"></a></p>
+			</div>
+            <p class="uk-text-right">
+                 <button class="uk-button uk-button-default uk-modal-close" type="button">إغلاق</button>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+$(if error)
+<div  id="alert-error">
+<div class="uk-alert-danger divAlertError"  uk-alert style="display: block">
+    <a class="uk-alert-close" uk-close></a>
+    <p>
+<script type="text/javascript">
+
+var error = "$(error)";
+
+if (error == "simultaneous session limit reached") {
+    err = "لا يمكن تسجيل الدخول أكثر من مرة";
+}
+else if (error == "invalid username or password") {
+    err = "خطأ في رمز الدخول";
+}
+else if (error == "access denied at this time") {
+    err ="بطاقة سهرة لا يمكن أستخدامها في هذا الوقت";
+}
+else if (error == "uptime limit reached") {
+    err = "عذرا لقد انتهى الوقت المتاح لك..";
+}
+else if (error == "invalid password") {
+    err = "تأكد من كتابة كلمة المرور بشكل صحيح";
+}
+else if (error == "no more sessions are allowed for user $(username)") {
+    err = "لا يمكن تسجيل الدخول أكثر من مرة";
+}
+else if (error == "no valid profile found") {
+    err = "لقد إنتهت صلاحية هذه البطاقة";
+}
+else if (error == "transfer limit reached") {
+    err ="لا يمكنك تسجيل الدخول , انتهى رصيد هذه البطاقة";
+}
+else if (error == "user $(username) has reached traffic limit") {
+    err ="لا يمكنك تسجيل الدخول , انتهى رصيد هذه البطاقة";
+}
+else if (error == "invalid Calling-Station-Id") {
+    err ="هذا الحساب مقترن بجهاز آخر ";
+}
+else if (error == "user $(username) is not allowed to log in from this MAC address") {
+    err ="هذا الحساب مقترن بجهاز آخر";
+}
+else if(error.search("not found") != -1) {
+    err = "اسم المستخدم غير موجود تأكد من كتابته بشكل صحيح";
+}
+else if (error == "radius timeout") {
+    err = "عزيزي المشترك نعتذر عن انقطاع الخدمة بسبب الصيانة";
+}
+else err = "$(error)";
+document.write(err);
+</script>
+</p>
+</div>
+</div>
+$(endif)  
+
+
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="assets/js/uikit.min.js" ></script>
+    <script type="text/javascript" src="assets/js/uikit-icons.min.js" ></script>
+
+    <script type="text/javascript" >
+        // function remove Spaces in Input
+        function removeSpaces(string) {
+         return string.split(' ').join('');
+        }
+        // Hide Placeholder on Form Focaus
+            $('[placeholder]').focus(function(){
+                $(this).attr('data-text', $(this).attr('placeholder'));
+                $(this).attr('placeholder', '');
+        
+              }).blur(function(){
+                  $(this).attr('placeholder', $(this).attr('data-text'));
+            });
+    </script>
+</body>
+</html>

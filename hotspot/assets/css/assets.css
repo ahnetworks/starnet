@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('../fonts/DroidArabicKufi.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 100;
+}
+body {
+    direction: rtl;
+    background: radial-gradient(#666667, #2f3542) no-repeat;
+   
+}
+
+.conta_btn {
+    width: 100%;
+    margin: 20px auto;
+}
+
+@media screen and (max-width: 500px) {
+    .conta_btn .uk-button { 
+        text-align: center;
+        width: 23.7%;
+        padding: 0 0.5%;
+    }
+}
+/* start page login */
+.allForm {
+    width: 45%;
+    float: right;
+    margin-left: 5%;
+}
+.infoNetwork {
+    width: 49%;
+    /* float: right; */
+    /* background: #fdfdfd0a; */
+    text-align: center;
+    padding: 11px;
+    margin-top: 10px;
+	/* margin-right: 13%; */
+}
+.infoNetwork h3 {
+    margin: 11px 3px;
+    color: #fff;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+}
+.infoNetwork p {
+    color: #8c8a8a;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+}
+@media screen and (max-width: 550px) {
+    .allForm { width:100%;}
+	/* .infoNetwork {display: none;} */
+}
+.marque {
+    padding: 9px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.22);
+    background: #fff;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.22);
+    box-shadow: 0 0 5px rgba(0,0,0,0.22);
+    font-size: 16px;
+    overflow: hidden;
+	margin: 11px auto;
+}
+.marque marquee {vertical-align: middle;}
+.marque marquee span {color: #2f3640 }
+.formlogin {
+    background: #ffffff;
+    padding: 20px 35px;
+    margin-top: 12px;
+}
+#form_title0 {
+    padding: 11px 5px;
+    font-size: 1em;
+    color: #f0506e;
+    border-bottom: 1px solid #f1f0f0;
+    position: relative;
+    margin-bottom: 35px;
+}
+#form_title0::before {
+    content: '';
+    width: 40%;
+    height: 1px;
+    background: #f0506e;
+    position: absolute;
+    bottom: -1px;
+    right: 30%;
+}
+.uk-form-icon {
+    color: #f0506e;
+}
+.copyright {
+    text-align: center;
+    font-size: 1em;
+    padding: 9px 5px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.22);
+    box-shadow: 0 0 5px rgba(0,0,0,0.22);
+    direction: rtl;
+    margin: 15px auto 20px auto;
+}
+@media screen and (max-width: 450px) {
+	.logo-basheer img{width: 100%;}
+}
+.logo-basheer {
+    max-width: 200px;
+    min-width: 200px;
+    margin: auto;
+}
+.titel div p {
+    display: inline;
+}
+.titel div { margin-bottom: 7px; }
+.uk-modal-body h2 { font-family: 'Droid Arabic Kufi', sans-serif;}
+.uk-notification-message div {
+    text-align: center;
+    font-size: 0.8em;
+}
+.alert-error {
+    position: relative;
+}
+.uk-alert-danger {
+    width: 93%;
+    margin: auto;
+    font-size: 0.8em;
+}
+.uk-offcanvas-bar h3 { font-family: 'Droid Arabic Kufi', sans-serif; }
+.divAlertError {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: #06060673;
+    padding: 0px;
+}
+.divAlertError .uk-alert-close {
+    position: absolute;
+    color: inherit;
+    opacity: 0.8;
+    padding: 5px;
+    color: #fff;
+
+}
+.divAlertError> p{
+    font-size: 1.1rem;
+    width: 90%;
+    margin: 50px auto !important;
+    display: block;
+    padding: 7px;
+    background: #fbfbfb;
+}
+/* end page login */
+/* Start nav Bar */
+/* start page price */
+.uk-card-body {
+    text-align: center;
+}
+.uk-card-default .uk-card-title {
+    color: #696969;
+    background: #cdcdce52;
+    padding: 9px;
+}
+.uk-card-primary .uk-card-title {
+    color: #1e87f0;
+    background: #0a0a0a40;
+    padding: 9px;
+}
+.uk-card-secondary .uk-card-title {
+    color: #1e87f0;
+    background: #9e9a9a1f;
+    padding: 9px;
+}
+.uk-card-body {
+    padding: 15px;
+}
+/* end page price */
+
+/* start page alogin */
+.alogin>div {
+    margin: 15% auto;
+}
+.alogin .uk-card-body> span {
+    color: #00bcd4;
+}
+.alogin h3 {  font-family: 'Droid Arabic Kufi', sans-serif;}
+.alogin .uk-card-body{
+    padding: 30px;
+}
+/* end page alogin */
+/**/
+.logout {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.status .uk-card-body> span {
+    margin-top: 25px;
+}
+.uk-card-body h3 { font-family: 'Droid Arabic Kufi', sans-serif;}
+.status .uk-alert-danger {
+    width: 100%;
+    margin-bottom: 25px;
+    font-size: 1em;
+}

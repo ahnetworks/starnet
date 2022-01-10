@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="windows-1256" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	
+    $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+    $(endif)
+    <meta http-equiv="refresh" content="300">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>معلومات الإشتراك</title>
+	
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> 
+    <link rel="stylesheet" href="assets/css/uikit.min.css" />
+	<link rel="stylesheet" href="assets/css/assets.css" />
+
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+<script language="JavaScript">
+
+function readablizeBytes(bytes) {
+var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+var e = Math.floor(Math.log(bytes)/Math.log(1024));
+return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+}
+
+</script>
+<script language="JavaScript">
+
+function readablizeBytes(bytes) {
+var s = ['&#1576;&#1575;&#1610;&#1578;', '&#1603;&#1610;&#1604;&#1608;&#1576;&#1575;&#1610;&#1578;', '&#1605;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1580;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1578;&#1610;&#1585;&#1575;&#1576;&#1575;&#1610;&#1578;', 'PB'];
+var e = Math.floor(Math.log(bytes)/Math.log(1024));
+return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
+}
+
+</script>
+<!-- Start Cookies-->
+<script type=text/javascript>
+    function delrem(){
+     document.cookie = "uname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+   
+       }
+   </script>
+<!-- End Cookies-->
+</head>
+
+<body advert-pending == 'yes' onLoad="openAdvert()">
+    <!--<div class="logo-basheer">
+        <img src="assets/img/logo.png" />
+    </div>-->
+    <form class="logout" action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+ $(if login-by == 'trial')
+ $(elif login-by != 'mac')
+ $(endif)
+ $(if session-time-left)
+ $(else)
+ $(endif)
+ $(if blocked == 'yes')
+ $(elif refresh-timeout)
+ $(endif)
+ $(if login-by-mac != 'yes')
+ <div class="uk-container uk-container-center status">
+    <div uk-scrollspy="cls:uk-animation-fade">
+        <div class="uk-card uk-card-default uk-card-body">
+            <span uk-icon="icon: user; ratio: 3"></span>
+            <h3 class="uk-card-title"> تفاصيل الحساب </h3>
+            <div class="uk-alert-primary" uk-alert>
+                          </div>
+            <div class="uk-alert-success" uk-alert>
+                <p class="header">الباقي من الرصيد</p>
+                <p class="valuee"><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></p>
+            </div>
+                
+            <div class="uk-alert-warning" uk-alert>
+                <p class="header">الباقي من الصلاحية</p>
+                <p id="timeLeft" class="valuee">$(session-time-left)</p>
+            </div>
+                
+            <div class="uk-alert-danger" uk-alert>
+                <p class="header">عنوان الايبي</p>
+                <p class="valuee">$(ip)</p>
+            </div>
+
+            <button type="submit" class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom">تسجيل خروج</button>
+            <button type="submit" onclick='return delrem();' class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">تسجيل بكرت اخر</button>
+
+        </div>
+    </div>
+ </div>
+
+ $(endif)
+    </form>
+<script type="text/javascript">
+document.getElementById("timeLeft").innerHTML = "$(session-time-left)".replace("w", " أسبوع , ").replace("d", " يوم , ").replace("h", " ساعة , ").replace("m", " دقيقة , ").replace("s", "");
+</script>
+
+    <script type="text/javascript" src="assets/js/uikit.min.js" ></script>
+    <script type="text/javascript" src="assets/js/uikit-icons.min.js" ></script>
+</body>
+
+</html> 
