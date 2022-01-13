@@ -27,43 +27,46 @@ position: relative;
     top:0px;
 }
 
+#error{
+	text-indent: 10px;
+}
+
 legend{
     position:relative;
-    top:17px;
+    top: -10px;
     color:#fff;
     font-size: 32px;
     font-family:sans-serif;
     
 }
+
+#sites {
+	font-size: 25px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #box{
     position:relative;
-    top:75px;
-	width:300px;
-	max-width:650px;
-	height:300px;
+    max-width:650px;
+	height: 700px;
 	background-color:rgba(255,255,255,1);
 	border-radius:0px;
 	padding:0 0 0 0;
-	margin:100px auto;
+    margin-top: 100px auto;
     z-index: 2;
-    box-shadow: 0 1px 0.5px #f1f1f1;
-
-
 }
 #topbox
 {
     background: #141414;
-    width: 100%;
-    height: 70px;
-    
+    height: 200px;
+    padding-bottom: 30px;
     
 }
 
 #img{
-	width: 200px;
-	height: 200px;
-	margin-top: -89px;
-	margin-right: -74px;
+	width: 250px;
+	height: 250px;
+	margin-right: -95px;
 }
 
 /**------------USER------------**/
@@ -75,7 +78,7 @@ display:block;width:230px;
 text-align:center;border-radius:21px;
 font-family:inherit;outline: none;
 transition:all 0.3s ease;
-margin-top: 10px;
+margin-top: 45px;
 position: sticky;
 }
 /**--------------------PASSWORD----------**/
@@ -111,6 +114,7 @@ color:#ccc;}
     @media (min-width:620px){
         #box{
             width: 600px;
+            height: 330px;
         }
         #topbox{
             height: 300px;
@@ -124,7 +128,10 @@ color:#ccc;}
 			margin-left: -100px;
 			position: absolute;
 		}
-        #user,#pass,#boton,#error{
+		#sites {
+			font-size: 15px;
+		}
+        #user,#pass,#boton,#error, #sites{
             position: relative;
             left:152px;
             top:55px;
