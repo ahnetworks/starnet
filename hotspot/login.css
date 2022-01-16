@@ -3,12 +3,13 @@
 }
 body {
 padding:0;margin:0 auto;
-    background:#1b1b1b;
+    background: black;
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
     background-size: cover;
-    height: 1000px;
     position:relative;
     top: -35px;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #head{
@@ -28,7 +29,9 @@ position: relative;
 }
 
 #error{
-	text-indent: 10px;
+	color: azure;
+	overflow-wrap: break-word;
+	width: 300px;
 }
 
 legend{
@@ -40,8 +43,11 @@ legend{
     
 }
 
+
+
 #sites {
 	font-size: 25px;
+	color: azure;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -49,7 +55,6 @@ legend{
     position:relative;
     max-width:650px;
 	height: 700px;
-	background-color:rgba(255,255,255,1);
 	border-radius:0px;
 	padding:0 0 0 0;
     margin-top: 100px auto;
@@ -57,22 +62,21 @@ legend{
 }
 #topbox
 {
-    background: #141414;
     height: 200px;
     padding-bottom: 30px;
     
 }
 
 #img{
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
 	margin-right: -95px;
 }
 
 /**------------USER------------**/
 #user{
-border:2px #141414 solid;
-color:#222222;background:rgba(255,255,255,0.1);opacity: 1;
+border:2px #c9c9c9 solid;
+color:azure;background:rgba(255,255,255,0.1);opacity: 1;
 height:40px;font-size:16px;
 display:block;width:230px;
 text-align:center;border-radius:21px;
