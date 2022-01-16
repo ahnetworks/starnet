@@ -7,6 +7,7 @@ padding:0;margin:0 auto;
 	background-image: url("background.jpg");
 	background-repeat: no-repeat;
     background-size: cover;
+	background-position: center center;
     position:relative;
     top: -35px;
     /* overflow-y: hidden; */
@@ -63,14 +64,13 @@ legend{
 #topbox
 {
     height: 200px;
-    padding-bottom: 30px;
+    padding-bottom: 300px;
     
 }
 
 #img{
-	width: 200px;
-	height: 200px;
-	margin-right: -95px;
+	width: 300px;
+	margin-right: -123px;
 }
 
 /**------------USER------------**/
