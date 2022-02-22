@@ -2,11 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Starlink | Login</title>
+<title>Login</title>
 <meta http-equiv="pragma" content="no-cache" />
-<link rel="icon" type="image/svg" href="logo.svg">
 <meta http-equiv="expires" content="-1" />	
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 <link rel="stylesheet" href="login.css" media="screen">
  
 
@@ -15,17 +14,15 @@
 $(if chap-id)
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
-		<!-- <input type="hidden" name="password" /> -->
 		<input type="hidden" name="dst" value="$(link-orig)" />
 		<input type="hidden" name="popup" value="true" />
 	</form>
 	
-	<script type="text/javascript" src="assets/js/md5.js"></script>
+	<script type="text/javascript" src="/md5.js"></script>
 	<script type="text/javascript">
 	<!--
 	    function doLogin() {
 		document.sendin.username.value = document.login.username.value;
-		// document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
 		document.sendin.submit();
 		return false;
 	    }
@@ -38,40 +35,24 @@ $(endif)
 	$(if chap-id) onSubmit="return doLogin()" $(endif)>
 <input type="hidden" name="dst" value="$(link-orig)" />
 <input type="hidden" name="popup" value="true" />
-<div style="margin:0;padding:50;display:inline"></div>
-
-<center>
-    <div id="head">
-    </div>
-    
-    
-<div id="box">
-    <div id="topbox">
-    <legend>
-    <img src="logo.svg" id="img" alt="">
-    </legend>
-</div>
-    
-<div><input id="user" autocomplete="on" name="username" value="$(username)" type="text" placeholder="PIN Code"/></div>
-<!-- <div><input id="pass" autocomplete="off" name="password" type="password" label="false" placeholder="Password"/></div> -->
-<div><input id="boton" name="submit" type="submit" value=" " title="Go to Launcher" /></div>
-    <p id="error">$(if error)<span style="color: #f44336; font-size: 16px">$(error)</span>$(endif)</p>
-	<p id="sites">:أماكن بيع الكروت
-	<br>
-	تمونيات الوادي والساحل •
-	<br>
-	بقالة عــــــــــــمـــــــــــــر •
-	<br>
-	بقالة بــــــــــاوزيـــــــــر •
-	<br>
-	بقالة الركن الذهبي •
-	<br>
-	تمونيات السعادة •
-	</p>
-</div>
-</center>
-
-
+<div style="margin:0;padding:0;display:inline"></div>
+<legend>
+<img class="logo" height="168px" width="400" src="logo.png" />
+<aqui se puede escribir>
+</legend>
+<input name="username" class="text" type="text" placeholder="PIN Code" size="30" />
+<input name="submit" type="submit" value=" " />
+<div class='footer'>
+<br><br>
+<p>$(if error)<span style="color: #000000; font-size: 16px">$(error)</span>$(endif)</p>
+<p style="font-size: 30px;">مواقع البيع</p>
+<span style="font-size: 20px; font-weight: bold;">كشك كرنشي</span>
+<br>
+<span style="font-size: 20px; font-weight: bold;">كشك بوب آيس</span>
+<br>
+<span style="font-size: 20px; font-weight: bold;">كشك ليالي الشام</span>
+<br>
+<span style="font-size: 20px; font-weight: bold;">بائع متجول صاحب التكتوك</span>
 <br>
 <p>
 </p>
@@ -79,10 +60,13 @@ $(endif)
 </form>
 
 <script type="text/javascript">
+<!--
   document.login.username.focus();
+//-->
 </script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 document.oncontextmenu = function(){return false;}
-</script> -->
+</script>
+
 </body>
 </html>

@@ -23,7 +23,7 @@ config-error = configuration error ($(error-orig))
 # Will happen, if status or logout page is requested by user,
 # which actually is not logged in
 
-not-logged-in = أنت غير مسجل دخول
+not-logged-in = you are not logged in (ip $(ip))
 
 # ippool-empty
 # IP address for user is to be assigned from ip pool, but there are no more
@@ -34,13 +34,13 @@ ippool-empty = cannot assign ip address - no more free addresses from pool
 # shutting-down
 # When shutdown is executed, new clients are not accepted
 
-shutting-down = يوجد صيانة في الشبكة
+shutting-down = hotspot service is shutting down
 
 # user-session-limit
 # If user profile has limit of shared-users, then this error will be shown
 # after reaching this limit
 
-user-session-limit = وصلت للحد الأقصى من المستخدمين لهذا الكرت
+user-session-limit = no more sessions are allowed for user $(username)
 
 # license-session-limit
 # Depending on licence number of active hotspot clients is limited to
@@ -72,7 +72,7 @@ chap-missing = web browser did not send challenge response (try again, enable Ja
 # has sent an error string with Access-Reject message, then it will
 # override this setting.
 
-invalid-username = خطأ في رمز الدخول
+invalid-username = invalid username or password
 
 # invalid-mac
 # Local users (on hotspot server) can be bound to some MAC address. If login
@@ -83,14 +83,14 @@ invalid-mac = user $(username) is not allowed to log in from this MAC address
 # uptime-limit, traffic-limit
 # For local hotspot users in case if limits are reached
 
-uptime-limit = لقد انتهت صلاحية حسابك
-traffic-limit = لقد انتهى رصيد حسابك
+uptime-limit = user $(username) has reached uptime limit
+traffic-limit = user $(username) has reached traffic limit
 
 # radius-timeout
 # User is authenticated by RADIUS server, but no response is received from it,
 # following error will be shown.
 
-radius-timeout = يوجد صيانة في الشبكة
+radius-timeout = RADIUS server is not responding
 
 # auth-in-progress
 # Authorization in progress. Client already has issued an authorization request

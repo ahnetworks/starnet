@@ -1,0 +1,23 @@
+/* 
+ * Droid Arabic Kufi (Arabic)
+ */
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 400;
+  src: url(droidarabickufi/DroidKufi-Regular.eot);
+  src: url(droidarabickufi/DroidKufi-Regular.eot?#iefix) format('embedded-opentype'),
+       url(droidarabickufi/DroidKufi-Regular.woff2) format('woff2'),
+       url(droidarabickufi/DroidKufi-Regular.woff) format('woff'),
+       url(droidarabickufi/DroidKufi-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 700;
+  src: url(droidarabickufi/DroidKufi-Bold.eot);
+  src: url(droidarabickufi/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'),
+       url(droidarabickufi/DroidKufi-Bold.woff2) format('woff2'),
+       url(droidarabickufi/DroidKufi-Bold.woff) format('woff'),
+       url(droidarabickufi/DroidKufi-Bold.ttf) format('truetype');
+}

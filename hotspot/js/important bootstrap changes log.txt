@@ -1,0 +1,20 @@
+In bootstrap.js we replaced this
+
+	var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+    
+with this
+
+	var nav_bar_height = $("#nav-bar").height();
+    if(nav_bar_height > 120){nav_bar_height = 65;}
+    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset + nav_bar_height
+
+
+
+	
+And in bootstrap.min.js we replaced this
+
+	var a,b=this.$scrollElement.scrollTop()+this.options.offset,
+
+with this
+
+	var h=$("#nav-bar").height();if(h>120){h=65;}var a,b=this.$scrollElement.scrollTop()+this.options.offset+h,

@@ -1,22 +1,42 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<html>
 <head>
-	<link rel="icon" type="image/svg" href="logo.svg">
-    $(if refresh-timeout)
-    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
-    $(endif)
-    <meta http-equiv="refresh" content="300">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="-1">
-	
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>SATNET | Status</title>
+$(if refresh-timeout)
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<style type="text/css">
+<!--
+textarea,input,select {
+	background-color: #FDFBFB;
+	border: 1px #BBBBBB solid;
+	padding: 2px;
+	margin: 1px;
+	font-size: 14px;
+	color: #808080;
+}
 
-    <title>Starlink | Status</title>
-	
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> 
-    <link rel="stylesheet" href="assets/css/uikit.min.css" />
-	<link rel="stylesheet" href="assets/css/assets.css" />
+.tabula{
+ 
+border-width: 1px; 
+border-collapse: collapse; 
+border-color: #c1c1c1; 
+background-color: transparent;
+font-family: verdana;
+font-size: 11px;
+}
 
+body{ color: #737373; font-size: 12px; font-family: verdana; }
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 12px; padding: 4px;}
+
+-->
+</style>
 <script language="JavaScript">
 <!--
 $(if advert-pending == 'yes')
@@ -37,84 +57,43 @@ $(endif)
     }
 //-->
 </script>
-<script language="JavaScript">
-
-function readablizeBytes(bytes) {
-var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
-var e = Math.floor(Math.log(bytes)/Math.log(1024));
-return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
-}
-
-</script>
-<script language="JavaScript">
-
-function readablizeBytes(bytes) {
-var s = ['&#1576;&#1575;&#1610;&#1578;', '&#1603;&#1610;&#1604;&#1608;&#1576;&#1575;&#1610;&#1578;', '&#1605;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1580;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1578;&#1610;&#1585;&#1575;&#1576;&#1575;&#1610;&#1578;', 'PB'];
-var e = Math.floor(Math.log(bytes)/Math.log(1024));
-return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2)+" "+s[e];
-}
-
-</script>
-<!-- Start Cookies-->
-<script type=text/javascript>
-    function delrem(){
-     document.cookie = "uname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-   
-       }
-   </script>
-<!-- End Cookies-->
 </head>
+<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
+$(if advert-pending == 'yes')
+	onLoad="openAdvert()"
+$(endif)
+>
+<table width="100%" height="100%">
 
-<body advert-pending == 'yes' onLoad="openAdvert()">
-    <!--<div class="logo-basheer">
-        <img src="assets/img/logo.png" />
-    </div>-->
-    <form class="logout" action="$(link-logout)" name="logout" onSubmit="return openLogout()">
- $(if login-by == 'trial')
- $(elif login-by != 'mac')
- $(endif)
- $(if session-time-left)
- $(else)
- $(endif)
- $(if blocked == 'yes')
- $(elif refresh-timeout)
- $(endif)
- $(if login-by-mac != 'yes')
- <div class="uk-container uk-container-center status">
-    <div uk-scrollspy="cls:uk-animation-fade">
-        <div class="uk-card uk-card-default uk-card-body">
-            <span uk-icon="icon: user; ratio: 3"></span>
-            <h3 class="uk-card-title"> تفاصيل الحساب </h3>
-            <div class="uk-alert-primary" uk-alert>
-                          </div>
-            <div class="uk-alert-success" uk-alert>
-                <p class="header">الباقي من الرصيد</p>
-                <p class="valuee"><script language="JavaScript">document.write(readablizeBytes($(remain-bytes-total)));</script></p>
-            </div>
-                
-            <div class="uk-alert-warning" uk-alert>
-                <p class="header">الباقي من الصلاحية</p>
-                <p id="timeLeft" class="valuee">$(session-time-left)</p>
-            </div>
-                
-            <div class="uk-alert-danger" uk-alert>
-                <p class="header">عنوان الايبي</p>
-                <p class="valuee">$(ip)</p>
-            </div>
+<tr>
+<td align="center" valign="middle">
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+<table border="1" class="tabula">
+	<tr><td align="right">IP address:</td><td>$(ip)</td></tr>
+	<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+$(if session-time-left)
+	<tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
+$(else)
+	<tr><td align="right">connected:</td><td>$(uptime)</td></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="right">status:</td><td><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+$(elif refresh-timeout)
+	<tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
+$(endif)
 
-            <button type="submit" class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom">تسجيل خروج</button>
-        </div>
-    </div>
- </div>
+</table>
+$(if login-by-mac != 'yes')
+<br>
+<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+<!-- end of user manager link -->
+<input type="submit" value="log off">
+$(endif)
+</form>
 
- $(endif)
-    </form>
-<script type="text/javascript">
-document.getElementById("timeLeft").innerHTML = "$(session-time-left)".replace("w", " أسبوع , ").replace("d", " يوم , ").replace("h", " ساعة , ").replace("m", " دقيقة , ").replace("s", "");
-</script>
-
-    <script type="text/javascript" src="assets/js/uikit.min.js" ></script>
-    <script type="text/javascript" src="assets/js/uikit-icons.min.js" ></script>
+</td>
+</table>
 </body>
-
-</html> 
+</html>
