@@ -82,7 +82,7 @@ h2 {
 .img-responsive{
 	width:360px;
 	display: inline-block;
-	/*padding: 30px 10px 25px 10px;*/
+	padding: 30px 10px 25px 10px;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-o-transition:all 0.3s ease-in-out;
